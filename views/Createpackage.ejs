@@ -52,7 +52,7 @@
                     <div class="d-flex">
                         <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
                         <!-- sidebar-toggle-->
-                        <a class="logo-horizontal " href="index.html">
+                        <a class="logo-horizontal " href="/homepage">
                             <img src="../assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
                             <img src="../assets/images/brand/logo-3.png" class="header-brand-img light-logo1"
                                 alt="logo">
@@ -181,6 +181,30 @@
                         </a>
                         <!-- LOGO -->
                     </div>
+                    <div class="main-sidemenu">
+                        <div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/></svg></div>
+                        <ul class="side-menu">
+                            <li class="sub-category">
+                                <h3>Main</h3>
+                            </li>
+                            <li class="slide">
+                                <a href="/dashboard" class="side-menu__item has-link" data-bs-toggle="slide" href="index.html"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
+                            </li>
+                            <li class="slide">
+                                <a href="/" class="side-menu__item has-link" data-bs-toggle="slide" href="index.html"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Menu</span></a>
+                            </li>
+                           
+
+    
+                            <li>
+                                <a class="side-menu__item has-link" href="/homepage" target="_blank"><i
+                                        class="side-menu__icon fe fe-zap"></i><span
+                                        class="side-menu__label">Landing Page</span></a>
+                            </li>
+                            
+                        </ul>
+                        <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"/></svg></div>
+                    </div>
                     
                 <!--/APP-SIDEBAR-->
             </div>
@@ -213,7 +237,99 @@
                                             <div class="row">
                                                 <div class="col-lg-12 col-md-12">
                                                     <div class="row">
-                                                        
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <div class="card">
+                                                                <div class="card-header">
+                                                                    <h3 class="card-title">Package Creation Form</h3>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <form>
+                                                                        <div class="form-row">
+                                                                            <div class="col-xl-6 mb-3">
+                                                                                <label for="validationDefault01">Package Name</label>
+                                                                                <input type="text" class="form-control" id="validationDefault01"
+                                                                                    value="Mark" required>
+                                                                            </div>
+                                                                            <div class="col-xl-3 mb-3">
+                                                                                <label for="validationDefault04">Package Type</label>
+                                                                                <select class="form-select form-control" id="validationDefault04"
+                                                                                    required>
+                                                                                    <option selected disabled value="">Choose...</option>
+                                                                                    <option>Copy Trade</option>
+                                                                                    <option>Managed Funds</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-row">
+                                                                            <div class="col-xl-3 mb-3">
+                                                                                <label for="validationDefault04">Package in</label>
+                                                                                <select class="form-select form-control" id="validationDefault04"
+                                                                                    required>
+                                                                                    <option selected disabled value="">Choose...</option>
+                                                                                    <option>Forex</option>
+                                                                                    <option>Crypto</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="col-xl-3 mb-3">
+                                                                                <label for="validationDefault05">Capital Minimum</label>
+                                                                                <input type="text" class="form-control" id="validationDefault05"
+                                                                                    required>
+                                                                            </div>
+                                                                            <div class="col-xl-3 mb-3">
+                                                                                <label for="validationDefault05">Capital Maximum</label>
+                                                                                <input type="text" class="form-control" id="validationDefault05"
+                                                                                    required>
+                                                                            </div>
+                                                                            <div class="col-xl-3 mb-3">
+                                                                                <label for="validationDefault05">Participation Fees</label>
+                                                                                <input type="text" class="form-control" id="validationDefault05"
+                                                                                    required>
+                                                                            </div>
+                                                                            
+                                                                            <div class="col-xl-3 mb-3">
+                                                                                <label for="validationDefault04">Referral Participation Income</label>
+                                                                                <select class="form-select form-control" id="validationDefault04"
+                                                                                    required>
+                                                                                    <option selected disabled value="">Choose...</option>
+                                                                                    <option>10%</option>
+                                                                                    <option>5%</option>
+                                                                                    <option>3%</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="col-xl-3 mb-3">
+                                                                                <label for="validationDefault04">Referral Profit Share</label>
+                                                                                <select class="form-select form-control" id="validationDefault04"
+                                                                                    required>
+                                                                                    <option selected disabled value="">Choose...</option>
+                                                                                    <option>10%</option>
+                                                                                    <option>5%</option>
+                                                                                    <option>3%</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="col-xl-3 mb-3">
+                                                                                <label for="validationDefault04">Settlement Period</label>
+                                                                                <select class="form-select form-control" id="validationDefault04"
+                                                                                    required>
+                                                                                    <option selected disabled value="">Choose...</option>
+                                                                                    <option>Weekly</option>
+                                                                                    <option>Fortnight</option>
+                                                                                    <option>Monthly</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                                    id="invalidCheck2" required>
+                                                                                <label class="form-check-label" for="invalidCheck2">Agree to terms and
+                                                                                    conditions</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <button class="btn btn-primary" type="submit">Submit form</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
                                                             
                                                         </div>
                                                     </div>

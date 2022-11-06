@@ -45,6 +45,7 @@ app.use('/uploads', express.static('uploads'));
 // local storage
 const users = []
 const tickets = []
+const packages = []
 
 //mongo initialization
 mongoose.connect("mongodb://0.0.0.0:27017/UserData", {
@@ -131,9 +132,27 @@ app.post('/choosepackage',(req,res)=>{
   
 })
 
+
+
 app.get('/createpackage', checkAuthenticated , (req,res)=>{
   res.render('Createpackage.ejs',{name: req.user.name,userimage:req.user.imagepath,status:"Admin"});
 })
+
+app.post('/createpackage',checkAuthenticated,(req,res)=>{
+const packagename = "a";
+const packagetype = "a";
+const packageSectype = "a";
+const min_capital = "a";
+const max_capital = "a";
+const profitshare = "a";
+const packagefees = "a";
+
+packages.push({
+
+})
+})
+
+
 
 //  Admin Dashboard - Ticket Relation
 app.get('/AnswerTicket',checkAuthenticated,(req,res)=>{
@@ -144,14 +163,6 @@ app.post('/AnswerTicket',checkAuthenticated,(req,res)=>{
 
 })
 
-//  Admin Dashboard - Set Account Status Relation
-app.get('/setaccountstatus',(req,res)=>{
-  res.render('setaccountstatus.ejs')
-})
-
-app.post('/setaccountstatus',checkAuthenticated,(req,res)=>{
-  
-})
 
 // routes
 
@@ -243,6 +254,17 @@ app.get('/Homepage', checkAuthenticated,(req,res)=>{
   }
 })
 
+app.get('/AddTradingAccount', checkAuthenticated, (req,res)=>{
+  if(req.user.email==="shiv@gmail.com" && req.user.password==="$2b$10$hjvriv/kOO4mlmJ64kkI9eJh/fmQ3wODevla2Din5gmQLfBidyTF.")
+  {
+  res.render('admin_index.ejs',{ name: req.user.name,userimage:req.user.imagepath,status:"Admin"});
+  }else if(req.user.email==="Cryptodashstaff@gmail.com" && req.user.password==="$2b$10$HW1l9DBwqu/cg1kmZT.Fi.KOl2ghWtcjyQs.CC2zOvxO6Bpwi2Tb6")
+  {
+    res.render('admin_index.ejs',{ name: req.user.name,userimage:req.user.imagepath,status:"Staff"});
+  }else{
+    res.render('addtradeaccount.ejs',{ name: req.user.name,userimage:req.user.imagepath,status:"User"});
+  }
+})
 
 // profile - pic user side
 app.get('/profilepicupload',(req,res)=>{
