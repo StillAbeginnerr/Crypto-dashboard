@@ -47,6 +47,12 @@ const users = []
 const tickets = []
 const packages = []
 
+const { MongoClient } = require('mongodb');
+// const { MongoClient } = require("mongodb");
+const connectionString = process.env.ATLAS_URI;
+
+
+
 //mongo initialization
 mongoose.connect("mongodb://0.0.0.0:27017/UserData", {
   useNewUrlParser: true,
@@ -89,6 +95,7 @@ async function fetchdata()
 const initializePassport = require('./passport-config');
 const user = require('./Models/user.js');
 const { realpath } = require('fs');
+
 initializePassport(
   passport,
   email => users.find(user => user.email === email),
@@ -198,7 +205,7 @@ app.get('/Home', (req,res)=>{
 // when user is loggedIn
 app.get('/', checkAuthenticated, async(req, res) => 
 {
-if(req.user.email==="shiv@gmail.com" && req.user.password==="$2b$10$hjvriv/kOO4mlmJ64kkI9eJh/fmQ3wODevla2Din5gmQLfBidyTF.")
+if(req.user.email==="shiv@gmail.com" && req.user.password==="abcdefg")
  {
  console.log('Hello')
  res.render('admin_index.ejs',{ name: req.user.name,userimage:req.user.imagepath,status:"Admin"})
