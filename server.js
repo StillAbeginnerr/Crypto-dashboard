@@ -9,7 +9,7 @@ var multer = require('multer');
 
 const PORT = process.env.PORT || 4500;
 
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
@@ -299,7 +299,7 @@ app.get('/editpassword',checkAuthenticated,(req,res)=>{
 })
 
 app.post('/editpassword',checkAuthenticated,async(req,res)=>{
-  const newpassword = await bcrypt.hash(req.body.newpass, 10)
+  const newpassword = req.body.newpass;
   res.redirect('/');
 const display = await User.findOneAndUpdate({id: req.user.id},{password:newpassword},{new: true}); 
 
@@ -311,7 +311,7 @@ req.user.password = newpassword;
 
 app.post('/register', checkNotAuthenticated, async (req, res) => {
   try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10)
+    const hashedPassword = req.body.password;
     const ids = Date.now().toString();
     
   /*  const awesome_instance = await new User({  name: req.body.name,
